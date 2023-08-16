@@ -37,7 +37,6 @@ class NewsDetail extends StatelessWidget {
                   MediaQuery.of(context).size.height * 438 / 812, // width: 50,
               width: double.infinity,
               decoration: const BoxDecoration(
-          
                   color: Color.fromARGB(255, 240, 236, 236),
                   borderRadius:
                       BorderRadius.vertical(top: Radius.circular(30))),
@@ -75,64 +74,55 @@ class NewsDetail extends StatelessWidget {
                       fontFamily: 'Nunito',
                       fontWeight: FontWeight.bold),
                 ),
-               
-             
-              ]
-              )
+              ])),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0, bottom: 60),
+                child: SizedBox(
+                  child: Container(
+                      width: MediaQuery.of(context).size.width * 290 / 375,
+                      height: MediaQuery.of(context).size.height * 150 / 812,
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 199, 185, 185),
+                          backgroundBlendMode: BlendMode.luminosity,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Column(children: [
+                              RichText(
+                                text: const TextSpan(
+                                    text: 'Sunday, 9 May 2021 \n \n',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 12),
+                                    children: [
+                                      TextSpan(
+                                        text:
+                                            'Crypto investors should be \n prepared to lose all their\n money, BOE governor says\n ',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: 'Published by Ryan Browne',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 12,
+                                            fontFamily: 'Nunito',
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ]),
+                              ),
+                            ]),
+                          ))),
+                ),
               ),
-   Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    
-     children: [
-       Padding(
-         padding: const EdgeInsets.only(top:15.0, bottom: 60),
-         child: SizedBox(
-         
-           child: Container(
-             
-               width: MediaQuery.of(context).size.width * 290 / 375,
-               height: MediaQuery.of(context).size.height * 150 / 812,
-               decoration: BoxDecoration(
-                   color: Color.fromARGB(255, 199, 185, 185),
-                         backgroundBlendMode: BlendMode.luminosity,
-                   borderRadius: BorderRadius.circular(20)),
-               child: Align(
-                   alignment: Alignment.centerLeft,
-                   child: Padding(
-                     padding: const EdgeInsets.all(15.0),
-                     child: Column(children: [
-                       RichText(
-                         text: const TextSpan(
-                             text: 'Sunday, 9 May 2021 \n \n',
-         
-                             style: TextStyle(
-                                 color: Colors.black, fontSize: 12),
-                                 
-                             children: [
-                               TextSpan(
-                                 text:
-                                     'Crypto investors should be \n prepared to lose all their\n money, BOE governor says\n ',
-                                 style: TextStyle(
-                                   color: Colors.black,
-                                   fontSize: 16,
-                                 ),
-                               ),
-                                TextSpan(
-                                    text: 'Published by Ryan Browne',
-                                    style: TextStyle(color: Colors.black, fontSize: 12 ,fontFamily: 'Nunito',fontWeight: FontWeight.bold),
-                                  ),
-                             ]),
-                       ),
-                     ]),
-                   )
-                   )
-                   ),
-         ),
-       ),
-     ],
-   )
-
-
+            ],
+          )
         ]));
   }
 }

@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(children: [
           Padding(
-            padding: EdgeInsets.only(top: 50, left: 25, right: 30),
+            padding: EdgeInsets.only(top: 40, left: 25, right: 30),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -45,43 +45,198 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 25,
+            height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('latest News', style: Theme.of(context).textTheme.titleLarge
+              Text('latest News', style: Theme.of(context).textTheme.titleLarge,
+              
                   // TextStyle(fontSize: 25,fontFamily:'Newsreader' ),
                   ),
-              TextButton(onPressed: () {}, child: Text('see All'))
+              TextButton(onPressed: () {}, child: Text('see All',style: TextStyle(
+                fontSize: 18
+              ),)),
+              
             ],
           ),
+
           SizedBox(
-            height: 8,
+            height: .5,
           ),
 
+ Container(
+          height: MediaQuery.of(context).size.height *272/800,
+          width: 500,
+         
 
-          //     child: Container(
-          //       height: MediaQuery.of(context).size.height*.25,
-          //       width: MediaQuery.of(context).size.width*1,
-          //       decoration: BoxDecoration(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(5, (index) {
+                return Container(
+                  height: MediaQuery.of(context).size.height / 3.5,
+                  // width: 250,
+                  margin: const EdgeInsets.only(right: 2),
+                  child: Image.asset('image/mann.png',),
                   
-          //         color: Colors.red,
-          //         image: DecorationImage(image: AssetImage("image/man.png"),
-          //         fit: BoxFit.fill)
-          //       ),
-                
-          //     ),
-          //   ),
-          // )
-        ]),
+                );
+               
+
+              }),
+            ),
+          ),
+        ),
+
+
+
+
+
+
+         SizedBox(
+          height: MediaQuery.of(context).size.height *55/800,
+        //  width: 1600,
+
+
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(8, (index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 3),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 5),
+                    child: Container(
+                      decoration:BoxDecoration(
+                          color: Color.fromARGB(255, 233, 77, 66),
+                          borderRadius: BorderRadius.circular(20)
+                      ),
+                      child: TextButton(
+                        onPressed: () {  },
+                        child: const Text('Technology',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18
+                          ),),
+                      ),
+                    ),
+                  ),
+                );
+              }),
+            ),
+          ),
+        ),
+
+
+  Align(
+          alignment: Alignment.bottomCenter,
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height *308/800,
+
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: List.generate(3, (index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 2),
+                    child: Image.asset('image/screen1.png',
+                      // fit: BoxFit.cover,
+                    ),
+                  );
+                }),
+              ),
+            ),
+          ),
+        ),
+        ]
+        
+  
+        )
+
       ),
+
+      floatingActionButton:  Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width / 1.4,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(15),
+            ),
+                child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FloatingActionButton(
+                    elevation: 0,
+                    onPressed: () {
+                     
+                    },
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.grey,
+                    child:  Column(
+                      children: [
+                        Icon(Icons.home_outlined),
+                        Text('home'),
+                      ],
+                    ),
+                  ),
+
+
+                  const SizedBox(width: 12),
+                  FloatingActionButton(
+                    elevation: 0,
+                    onPressed: () {},
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.grey,
+                    child: Column(
+                      children: [
+                        Icon(Icons.favorite_border),
+                        Text(
+                          'favorite',
+                          style: TextStyle(fontSize: 13),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  FloatingActionButton(
+                    elevation: 0,
+                    onPressed: () {},
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.grey,
+                    child:  Column(
+                      children: [
+                        Icon(Icons.emoji_emotions_outlined),
+                        Text('profile'),
+                      ],
+                    ),
+                  ),
+                ],
+
       // Add more content to your static page as needed
-    );
+    )))]));
   }
 }
 
-
+// Row(
+//   children: [
+//     Container(
+//       width: 100, // adjust the width as per your requirement
+//       child: Image.asset('path_to_image1.png'),
+//     ),
+//     Container(
+//       width: 100, // adjust the width as per your requirement
+//       child: Image.asset('path_to_image2.png'),
+//     ),
+//     Container(
+//       width: 100, // adjust the width as per your requirement
+//       child: Image.asset('path_to_image3.png'),
+//     ),
+//   ],
+// )
 
 
 
